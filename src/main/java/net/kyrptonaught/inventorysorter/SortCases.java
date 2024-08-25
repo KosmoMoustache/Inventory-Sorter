@@ -6,7 +6,9 @@ import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.component.type.ProfileComponent;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.*;
+import net.minecraft.nbt.NbtList;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
 
@@ -81,8 +83,12 @@ public class SortCases {
         ItemEnchantmentsComponent enchantmentsComponent = stack.getComponents().get(DataComponentTypes.STORED_ENCHANTMENTS);
         List<String> names = new ArrayList<>();
         StringBuilder enchantNames = new StringBuilder();
-        for (Object2IntMap.Entry<RegistryEntry<Enchantment>> enchant : enchantmentsComponent.getEnchantmentEntries()) {
-            names.add(Enchantment.getName(enchant.getKey(), enchant.getIntValue()).getString());
+        if (enchantmentsComponent == null)
+            return stack.getItem().toString();
+        for (Object2IntMap.Entry<RegistryEntry<Enchantment>> enchant : enchantmentsComponent.getEnchantmentsMap()) {
+            // TODO
+            names.add(Enchantment.byRawId(enchant.getKey().getKey().get().hashCode()).getName(enchant.getIntValue()).getString());
+//            names.add(Enchantment.getName(enchant.getKey(), enchant.getIntValue()).getString());
         }
         Collections.sort(names);
         for (String enchant : names) {

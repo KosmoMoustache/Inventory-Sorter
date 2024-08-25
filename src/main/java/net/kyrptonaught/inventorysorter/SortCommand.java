@@ -83,7 +83,7 @@ public class SortCommand {
 
     public static int executeBlackList(CommandContext<ServerCommandSource> commandContext, boolean isDNS) {
         String id = StringArgumentType.getString(commandContext, "screenid");
-        if (Registries.SCREEN_HANDLER.containsId(Identifier.of(id))) {
+        if (Registries.SCREEN_HANDLER.containsId(Identifier.tryParse(id))) {
             if (isDNS) InventorySorterMod.getBlackList().doNotSortList.add(id);
             else InventorySorterMod.getBlackList().hideSortBtnsList.add(id);
             InventorySorterMod.configManager.save();

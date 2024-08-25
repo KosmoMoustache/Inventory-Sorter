@@ -48,35 +48,35 @@ public class IgnoreList implements AbstractConfigFile {
     public HashSet<String> hideSortBtnsList = new HashSet<>();
 
     public transient HashSet<Identifier> defaultHideSortBtnsList = Sets.newHashSet(
-            Identifier.of("guild:quest_screen"),
-            Identifier.of("ae2:crystal_growth"),
-            Identifier.of("ae2:advanced_inscriber"),
-            Identifier.of("ae2:item_terminal"),
-            Identifier.of("ae2:drive"),
-            Identifier.of("ae2:patternterm"),
-            Identifier.of("ae2:craftingterm"),
-            Identifier.of("dankstorage:portable_dank_1"),
-            Identifier.of("dankstorage:portable_dank_2"),
-            Identifier.of("dankstorage:portable_dank_3"),
-            Identifier.of("dankstorage:portable_dank_4"),
-            Identifier.of("dankstorage:portable_dank_5"),
-            Identifier.of("dankstorage:portable_dank_6"),
-            Identifier.of("dankstorage:portable_dank_7")
+            Identifier.of("guild","quest_screen"),
+            Identifier.of("ae2", "crystal_growth"),
+            Identifier.of("ae2", "advanced_inscriber"),
+            Identifier.of("ae2", "item_terminal"),
+            Identifier.of("ae2", "drive"),
+            Identifier.of("ae2", "patternterm"),
+            Identifier.of("ae2", "craftingterm"),
+            Identifier.of("dankstorage", "portable_dank_1"),
+            Identifier.of("dankstorage", "portable_dank_2"),
+            Identifier.of("dankstorage", "portable_dank_3"),
+            Identifier.of("dankstorage", "portable_dank_4"),
+            Identifier.of("dankstorage", "portable_dank_5"),
+            Identifier.of("dankstorage", "portable_dank_6"),
+            Identifier.of("dankstorage", "portable_dank_7")
     );
 
     public transient HashSet<Identifier> defaultDoNotSortList = Sets.newHashSet(
             Registries.SCREEN_HANDLER.getId(ScreenHandlerType.CRAFTING),
-            Identifier.of("adorn:trading_station"),
-            Identifier.of("guild:quest_screen"),
-            Identifier.of("conjuring:soulfire_forge"),
-            Identifier.of("spectrum:pedestal"),
-            Identifier.of("bankstorage:bank_1"),
-            Identifier.of("bankstorage:bank_2"),
-            Identifier.of("bankstorage:bank_3"),
-            Identifier.of("bankstorage:bank_4"),
-            Identifier.of("bankstorage:bank_5"),
-            Identifier.of("bankstorage:bank_6"),
-            Identifier.of("bankstorage:bank_7")
+            Identifier.of("adorn", "trading_station"),
+            Identifier.of("guild", "quest_screen"),
+            Identifier.of("conjuring", "soulfire_forge"),
+            Identifier.of("spectrum", "pedestal"),
+            Identifier.of("bankstorage", "bank_1"),
+            Identifier.of("bankstorage", "bank_2"),
+            Identifier.of("bankstorage", "bank_3"),
+            Identifier.of("bankstorage", "bank_4"),
+            Identifier.of("bankstorage", "bank_5"),
+            Identifier.of("bankstorage", "bank_6"),
+            Identifier.of("bankstorage", "bank_7")
     );
 
     public boolean isSortBlackListed(Identifier screenHandlerTypeID) {
